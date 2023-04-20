@@ -87,9 +87,8 @@ class TTSWebUI:
                                   title=title,
                                   theme="default",
                                   allow_flagging="never",
-                                  article=article,
-                                  server_name="0.0.0.0")
-        self.iface.launch(enable_queue=True)
+                                  article=article)
+        self.iface.launch(server_name="0.0.0.0", enable_queue=True)
 
     def read(self,
              prompt,
