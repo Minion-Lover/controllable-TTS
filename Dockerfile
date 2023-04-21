@@ -3,9 +3,9 @@ FROM python:3.9
 RUN apt-get update && \
     apt-get install -y libsndfile1
 RUN apt-get update && \
-    apt-get install -y libsndfile1
+    apt-get install -y portaudio19-dev
 RUN apt-get update && \
-    apt-get install -y libsndfile1
+    apt-get install -y espeak
 
 WORKDIR /srv
 COPY ./requirements.txt .
