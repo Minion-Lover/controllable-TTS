@@ -21,5 +21,4 @@ COPY ./Preprocessing /srv/Preprocessing
 COPY ./TrainingInterfaces /srv/TrainingInterfaces
 COPY ./Utility /srv/Utility
 
-CMD ["python", "run_model_downloader.py"]
-CMD ["python", "run_controllable_GUI.py"]
+CMD ["bash", "-c", "python run_model_downloader.py && python run_controllable_GUI.py"]
