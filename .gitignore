@@ -2,6 +2,7 @@
 tensorboard_logs/
 Corpora/
 Models/
+temp/
 audios/
 Preprocessing/glottolog/
 apex/
