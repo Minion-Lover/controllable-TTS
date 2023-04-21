@@ -1,4 +1,4 @@
-FROM python:3.9
+FROM python:3.8
 
 RUN apt-get update && \
     apt-get install -y libsndfile1
@@ -22,4 +22,4 @@ COPY ./Preprocessing /srv/Preprocessing
 COPY ./TrainingInterfaces /srv/TrainingInterfaces
 COPY ./Utility /srv/Utility
 
-CMD ["/srv/run_both_scripts.sh"]
+CMD ["bash", "-c", "/srv/venv/bin/python run_model_downloader.py && /srv/venv/bin/python run_controllable_GUI.py"]
