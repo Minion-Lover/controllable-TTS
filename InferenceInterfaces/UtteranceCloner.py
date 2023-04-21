@@ -38,7 +38,8 @@ class UtteranceCloner:
                                                   model='silero_vad',
                                                   force_reload=False,
                                                   onnx=False,
-                                                  verbose=False)
+                                                  verbose=False,
+                                                  trust_repo=True)
         (self.get_speech_timestamps, _, _, _, _) = utils
         torch.set_grad_enabled(True)  # finding this issue was very infuriating: silero sets
         # this to false globally during model loading rather than using inference_mode or no_grad

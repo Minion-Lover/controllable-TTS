@@ -14,7 +14,8 @@ def make_sielce_cleaned_versions(train_sets):
                                          model='silero_vad',
                                          force_reload=False,
                                          onnx=False,
-                                         verbose=False)
+                                         verbose=False,
+                                         trust_repo=True)
     (get_speech_timestamps,
      save_audio,
      read_audio,
