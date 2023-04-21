@@ -10,6 +10,8 @@ RUN apt-get update && \
 WORKDIR /srv
 COPY ./requirements.txt .
 
+RUN apt-get update && \
+    apt-get install python3.9-venv
 RUN python3 -m venv venv && . venv/bin/activate
 RUN python3 -m pip install --no-cache-dir -r requirements.txt --upgrade pip
 
