@@ -34,7 +34,7 @@ class UtteranceCloner:
         self.aligner_weights = torch.load(acoustic_checkpoint_path, map_location='cpu')["asr_model"]
         torch.hub._validate_not_a_forked_repo = lambda a, b, c: True  # torch 1.9 has a bug in the hub loading, this is a workaround
         # careful: assumes 16kHz or 8kHz audio
-        self.silero_model, utils = torch.hub.load(repo_or_dir='snakers4/silero-vad',
+        self.silero_model, utils = torch.hub.load(repo_or_dir='/snakers4-silero-vad',
                                                   model='silero_vad',
                                                   force_reload=False,
                                                   onnx=False,

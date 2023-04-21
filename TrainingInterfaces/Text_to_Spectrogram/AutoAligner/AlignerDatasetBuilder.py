@@ -37,8 +37,7 @@ class AlignerDatasetBuilder(Dataset):
                            model='silero_vad',
                            force_reload=False,
                            onnx=False,
-                           verbose=False,
-                           trust_repo=True)  # download and cache for it to be loaded and used later
+                           verbose=False)  # download and cache for it to be loaded and used later
             torch.set_grad_enabled(True)
         self.resource_manager = Manager()
         self.speaker_embeddings = list()

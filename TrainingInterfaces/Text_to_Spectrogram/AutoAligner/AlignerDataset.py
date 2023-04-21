@@ -39,8 +39,7 @@ class AlignerDataset(Dataset):
                                model='silero_vad',
                                force_reload=False,
                                onnx=False,
-                               verbose=False,
-                               trust_repo=True)  # download and cache for it to be loaded and used later
+                               verbose=False)  # download and cache for it to be loaded and used later
                 torch.set_grad_enabled(True)
             resource_manager = Manager()
             self.path_to_transcript_dict = resource_manager.dict(path_to_transcript_dict)

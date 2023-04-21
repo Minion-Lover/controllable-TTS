@@ -8,10 +8,13 @@ RUN apt-get update && \
     apt-get install -y espeak
 
 WORKDIR /srv
-COPY ./requirements.txt /srv/requirements.txt
+COPY ./requirements.txt .
 
+RUN apt-get update && \
+    apt-get install python3.9-venv
+    
 RUN python3 -m venv venv && . venv/bin/activate
-RUN pip3 install -r requirements.txt
+RUN python3 -m pip install --no-cache-dir -r requirements.txt --upgrade pip
 
 COPY ./run_model_downloader.py /srv/run_model_downloader.py
 COPY ./run_controllable_GUI.py /srv/run_controllable_GUI.py
@@ -21,4 +24,4 @@ COPY ./Preprocessing /srv/Preprocessing
 COPY ./TrainingInterfaces /srv/TrainingInterfaces
 COPY ./Utility /srv/Utility
 
-CMD ["/srv/venv/bin/python", "run_model_downloader.py && run_controllable_GUI.py"]
+CMD ["bash", "-c", "python run_model_downloader.py && python run_controllable_GUI.py"]
